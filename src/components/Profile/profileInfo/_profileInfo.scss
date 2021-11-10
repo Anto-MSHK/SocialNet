@@ -1,0 +1,30 @@
+.profileInfo {
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: center;
+	background-color: #242527;
+	border-radius: 5px;
+	padding: 15px;
+	&__data li {
+		margin: 0 0 10px 0;
+	}
+
+	&__data div {
+		display: flex;
+		justify-content: space-around;
+	}
+	&__name {
+	}
+	&__age {
+		margin: 10px;
+	}
+	&__city {
+	}
+	&__avatar {
+		width: 150px;
+		height: 150px;
+		border-radius: 50%;
+		margin: 0 0 10px 0;
+	}
+}

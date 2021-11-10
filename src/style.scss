@@ -1,0 +1,71 @@
+@import "./null_style";
+// ---------------------------------- //
+@import "./components/header/head";
+// ---------------------------------- //
+@import "./components/navigation/navigation";
+// ---------------------------------- //
+@import "./components/Profile/profileInfo/profileInfo";
+@import "./components/Profile/postList/postList";
+@import "./components/Profile/postList/post/post";
+@import "./components/Profile/addPost/addPost";
+// ---------------------------------- //
+@import "./components/dialogs/dialogs";
+// ---------------------------------- //
+@import "./components/userInfo/userInfo";
+
+body {
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+		"Droid Sans", "Helvetica Neue", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+/*///////////////////////////////////////////////////// */
+
+.app-wrapper {
+	max-width: 1200px;
+	margin: 0 auto;
+	display: grid;
+	grid-template: 70px 100% / 20% 80%;
+	grid-template-areas:
+		"h h"
+		"n c";
+	padding: 0 10px;
+}
+
+.app__content {
+	grid-area: c;
+
+	color: #ffffff;
+
+	padding: 10px 10px;
+
+	height: 100%;
+}
+
+.app__content-wrapper {
+	display: block;
+	width: 100%;
+	border-radius: 5px;
+	background-color: #393a3c;
+	overflow: hidden;
+
+	padding: 10px;
+}
+
+/*///////////////////////////////////////////////////// */
+
+h1 {
+	font-weight: bold;
+	font-size: 25px;
+}
+
+h2 {
+	font-weight: bold;
+	font-size: 20px;
+}
