@@ -310,15 +310,15 @@ h6 {
   color: white;
 }
 
-.dialogs__contact-item, .dialogs__sms-item {
-  margin: 0 0 10px 0;
-}
-
 .dialogs__sms-list {
   width: 60%;
 }
 
-.dialogs__sms-item p {
+.sms-item {
+  margin: 0 0 10px 0;
+}
+
+.sms-item p {
   margin: 10px 0;
 }
 

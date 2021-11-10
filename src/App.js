@@ -1,13 +1,13 @@
 import "./css/style.css";
-import Head from './components/header/Head';
-import Navigation from './components/navigation/Navigation';
+import Head from './components/Header/Head';
+import Navigation from './components/Navigation/Navigation';
 import Profile from './components/Profile/Profile';
-import Dialogs from "./components/dialogs/Dialogs";
+import Dialogs from "./components/Dialogs/Dialogs";
 import { Route, Routes } from "react-router-dom";
 import { BrowserRouter } from "react-router-dom";
-import News from "./components/news/News";
-import Music from "./components/music/Music";
-import Settings from "./components/settings/Settings";
+import News from "./components/News/News";
+import Music from "./components/Music/Music";
+import Settings from "./components/Settings/Settings";
 
 const App = () => {
 	return (

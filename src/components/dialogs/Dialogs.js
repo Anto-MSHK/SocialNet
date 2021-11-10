@@ -1,28 +1,6 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
-import UserInfo from '../userInfo/UserInfo'
-
-const ContactItem = (props) => {
-	let path = "/dialogs/" + props.id
-
-	return (
-		<NavLink to={path} className="dialogs__contact-item">
-			<UserInfo isStatus userName={props.userName} />
-		</NavLink>
-	)
-}
-
-const MessageItem = (props) => {
-	return (
-		<div className="dialogs__sms-item">
-			<UserInfo userName={props.userName} />
-			<p>
-				{props.message}
-			</p>
-		</div>
-	)
-}
-
+import ContactItem from './contactItem/ContactItem'
+import MessageItem from './dialogItem/DialogItem'
 
 const Dialogs = () => {
 
