@@ -322,6 +322,32 @@ h6 {
   margin: 10px 0;
 }
 
+.formAddMessage {
+  display: block;
+  width: 100%;
+  margin: 15px 0 0 0;
+}
+
+.formAddMessage__input {
+  margin: 10px 0 0 0;
+  width: 100%;
+  height: 150px;
+  border-radius: 5px 5px 0 0;
+  font-size: 20px;
+}
+
+.formAddMessage__BtnAdd {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  top: -1px;
+  font-size: 14px;
+  padding: 5px 10px;
+  background-color: #2284f9;
+  color: white;
+  border-radius: 0 0 5px 5px;
+}
+
 .userInfo {
   display: -webkit-box;
   display: -ms-flexbox;

@@ -1,14 +1,23 @@
 import React from 'react'
 
-const AddPost = () => {
+let AddPost = (props) => {
+
+	let newPostElement = React.createRef();
+
+	const onAddPost = () => {
+		let text = newPostElement.current.value;
+		props.addPost(text);
+		newPostElement.current.value = '';
+	}
+
 	return (
 		<form className="formAddPost" >
 			<h2 class="formAddPost__title">Add post</h2>
 
-			<textarea style={{ resize: "none" }} className="formAddPost__input"
+			<textarea ref={newPostElement} style={{ resize: "none" }} className="formAddPost__input"
 				placeholder="Text"
 			/>
-			<button className="formAddPost__BtnAdd">Create post</button>
+			<button type='button' onClick={onAddPost} className="formAddPost__BtnAdd">Create post</button>
 		</form >
 	)
 }
