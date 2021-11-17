@@ -1,4 +1,6 @@
-import { rerenderEntireTree } from './../render';
+let rerenderEntireTree = () => {
+
+}
 
 let DATA = {
 	profilePage: {
@@ -13,7 +15,8 @@ let DATA = {
 				text: 'This is my first post!',
 				likes: '8'
 			}
-		]
+		],
+		newPostText: ''
 	},
 	messagesPage: {
 		contacts: [
@@ -73,29 +76,47 @@ let DATA = {
 				message: "I\'m going to admire the universe, and you are walking to be presented in the edges of some,\
 		That\'s the whole difference, you know, you do not know this eternal endless, you don\'t need it!"
 			}
-		]
+		],
+		newMessageText: ''
 	}
 }
 
-export let addPost = (postMessage) => {
+export const addPost = () => {
 	let newPost = {
 		id: 5,
-		text: postMessage,
+		text: DATA.profilePage.newPostText,
 		likes: 0
 	}
 
-	DATA.profilePage.posts.push(newPost);
-	rerenderEntireTree(DATA);
+	DATA.profilePage.newPostText = ''
+	DATA.profilePage.posts.push(newPost)
+	rerenderEntireTree(DATA)
 }
 
-export let addMessage = (message) => {
+export const addMessage = () => {
 	let newMessage = {
 		id: 6,
 		name: 'Anton',
-		message: message,
+		message: DATA.messagesPage.newMessageText,
 	}
 
-	DATA.messagesPage.dialogs.push(newMessage);
+	DATA.messagesPage.newMessageText = ''
+	DATA.messagesPage.dialogs.push(newMessage)
 	rerenderEntireTree(DATA);
 }
+
+
+export const changeNewPost = (change) => {
+	DATA.profilePage.newPostText = change;
+	rerenderEntireTree(DATA);
+}
+export const changeNewMessage = (change) => {
+	DATA.messagesPage.newMessageText = change
+	rerenderEntireTree(DATA);
+}
+
+export const handler = (observer) => {
+	rerenderEntireTree = observer
+}
+
 export default DATA;
