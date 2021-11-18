@@ -1,20 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import DATA from "./redux/state"
-import { addPost, addMessage, handler, changeNewPost, changeNewMessage } from './redux/state'
+import { state } from './redux/state';
 
 
 let rerenderEntireTree = (DATA) => {
 	ReactDOM.render(
 		<React.StrictMode>
-			<App DATA={DATA} addPost={addPost} addMessage={addMessage} changeNewPost={changeNewPost} changeNewMessage={changeNewMessage} />
+			<App DATA={DATA.getDATA()} AddPost={state.addPost.bind(state)} ChangeAddPost={state.changeAddPost.bind(state)} AddMessage={state.addMessage.bind(state)} ChangeAddMessage={state.changeAddMessage.bind(state)} />
 		</React.StrictMode>,
 		document.getElementById('root')
 	);
 }
 
-rerenderEntireTree(DATA)
+rerenderEntireTree(state)
 
-handler(rerenderEntireTree)
+state.handler(rerenderEntireTree)
 

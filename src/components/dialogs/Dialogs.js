@@ -5,8 +5,8 @@ import MessageItem from './dialogItem/DialogItem'
 
 const Dialogs = (props) => {
 
-	let contacts_elements = props.DATAmessages.contacts.map(contact => (<ContactItem userName={contact.name} id={contact.id} />))
-	let dialog_elements = props.DATAmessages.dialogs.map(sms => (<MessageItem userName={sms.name} message={sms.message} />))
+	let contacts_elements = props.DATAMessages.contacts.map(contact => (<ContactItem userName={contact.name} id={contact.id} />))
+	let dialog_elements = props.DATAMessages.dialogs.map(sms => (<MessageItem userName={sms.name} message={sms.message} />))
 
 	return (
 		<div className="dialogs">
@@ -21,7 +21,7 @@ const Dialogs = (props) => {
 
 				{dialog_elements}
 
-				<AddMessage addMessage={props.addMessage} changeNewMessage={props.changeNewMessage} DATAmessages={props.DATAmessages.newMessageText} />
+				<AddMessage DATAMessages={props.DATAMessages} AddMessage={props.AddMessage} ChangeAddMessage={props.ChangeAddMessage} />
 			</div>
 
 		</div>
