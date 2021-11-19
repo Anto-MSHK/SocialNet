@@ -7,8 +7,8 @@ const Profile = (props) => {
 	return (
 		<div>
 			<ProfileInfo />
-			<AddPost DATAProfile={props.DATAProfile} AddPost={props.AddPost} ChangeAddPost={props.ChangeAddPost} />
-			<PostList DATAProfile={props.DATAProfile} />
+			<AddPost DATAProfile={props.DATAProfile} dispatch={props.dispatch} />
+			<PostList DATAProfile={props.DATAProfile} dispatch={props.dispatch} />
 		</div>
 	)
 }

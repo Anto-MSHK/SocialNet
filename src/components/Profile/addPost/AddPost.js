@@ -1,17 +1,17 @@
 import React from 'react'
+import { addPostAC, changeAddPostAC } from '../../../redux/profileReducer';
 
 let AddPost = (props) => {
 
 	let newPostElement = React.createRef();
 
 	const onAddPost = () => {
-		props.AddPost()
+		props.dispatch(addPostAC())
 	}
 
 	let onPostChange = () => {
-		debugger
 		let change = newPostElement.current.value
-		props.ChangeAddPost(change)
+		props.dispatch(changeAddPostAC(change))
 	}
 
 	return (

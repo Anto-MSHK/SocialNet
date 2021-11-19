@@ -1,17 +1,17 @@
 import React, { createRef } from 'react'
+import { changeAddMessageAC, addMessageAC } from './../../../redux/messagesReducer';
 
 const AddMessage = (props) => {
 
 	let newMessageElement = React.createRef();
 
 	let onAddMessage = () => {
-		let text = newMessageElement.current.value
-		props.AddMessage()
+		props.dispatch(addMessageAC())
 	}
 
 	let onMessageChange = () => {
 		let change = newMessageElement.current.value
-		props.ChangeAddMessage(change)
+		props.dispatch(changeAddMessageAC(change))
 	}
 
 	return (

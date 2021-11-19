@@ -21,7 +21,7 @@ const Dialogs = (props) => {
 
 				{dialog_elements}
 
-				<AddMessage DATAMessages={props.DATAMessages} AddMessage={props.AddMessage} ChangeAddMessage={props.ChangeAddMessage} />
+				<AddMessage DATAMessages={props.DATAMessages} dispatch={props.dispatch} />
 			</div>
 
 		</div>

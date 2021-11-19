@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import { BrowserRouter } from "react-router-dom";
 import { state } from './redux/state';
 
 
 let rerenderEntireTree = (DATA) => {
 	ReactDOM.render(
-		<React.StrictMode>
-			<App DATA={DATA.getDATA()} AddPost={state.addPost.bind(state)} ChangeAddPost={state.changeAddPost.bind(state)} AddMessage={state.addMessage.bind(state)} ChangeAddMessage={state.changeAddMessage.bind(state)} />
-		</React.StrictMode>,
+		<BrowserRouter>
+			<App DATA={DATA.getDATA()} dispatch={state.dispatch.bind(state)} />
+		</BrowserRouter>,
 		document.getElementById('root')
 	);
 }

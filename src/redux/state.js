@@ -1,5 +1,10 @@
+
+import profileReducer from './profileReducer';
+import messagesReducer from './messagesReducer';
+
+
 export let state = {
-	DATA: {
+	_DATA: {
 		profilePage: {
 			posts: [
 				{
@@ -78,49 +83,23 @@ export let state = {
 		}
 	},
 
+	_rerenderEntireTree() {
+	},
+
 	getDATA() {
-		return this.DATA
-	},
-
-	addPost() {
-		let newPost = {
-			id: 5,
-			text: this.DATA.profilePage.newPostText,
-			likes: 0
-		}
-
-		this.DATA.profilePage.newPostText = ''
-		this.DATA.profilePage.posts.push(newPost)
-		this.rerenderEntireTree(this);
-	},
-
-	changeAddPost(change) {
-		this.DATA.profilePage.newPostText = change
-		this.rerenderEntireTree(this)
-	},
-
-	addMessage() {
-		let newMessage = {
-			id: 6,
-			name: 'Anton',
-			message: this.DATA.messagesPage.newMessageText,
-		}
-
-		this.DATA.messagesPage.newMessageText = ''
-		this.DATA.messagesPage.dialogs.push(newMessage)
-		this.rerenderEntireTree(this);
-	},
-
-	changeAddMessage(change) {
-		this.DATA.messagesPage.newMessageText = change
-		this.rerenderEntireTree(this);
-	},
-
-	rerenderEntireTree() {
+		return this._DATA
 	},
 
 	handler(observer) {
-		this.rerenderEntireTree = observer
+		this._rerenderEntireTree = observer
 	},
 
+	dispatch(action) {
+
+		this._DATA.profilePage = profileReducer(this._DATA.profilePage, action)
+		this._DATA.messagesPage = messagesReducer(this._DATA.messagesPage, action)
+
+		this._rerenderEntireTree(this);
+	}
 }
+
