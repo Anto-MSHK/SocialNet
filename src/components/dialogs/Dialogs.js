@@ -1,12 +1,13 @@
 import React from 'react'
-import AddMessage from './addMessage/AddMessage'
+import AddMessageContainer from './addMessage/AddMessage copy';
 import ContactItem from './contactItem/ContactItem'
 import MessageItem from './dialogItem/DialogItem'
 
+
 const Dialogs = (props) => {
 
-	let contacts_elements = props.state.contacts.map(contact => (<ContactItem userName={contact.name} id={contact.id} />))
-	let dialog_elements = props.state.dialogs.map(sms => (<MessageItem userName={sms.name} message={sms.message} />))
+	let contacts_elements = props.state.messagesPage.contacts.map(contact => (<ContactItem userName={contact.name} id={contact.id} />))
+	let dialog_elements = props.state.messagesPage.dialogs.map(sms => (<MessageItem userName={sms.name} message={sms.message} />))
 
 	return (
 		<div className="dialogs">
@@ -21,7 +22,7 @@ const Dialogs = (props) => {
 
 				{dialog_elements}
 
-				<AddMessage state={props.state} dispatch={props.dispatch} />
+				<AddMessageContainer store={props.store} />
 			</div>
 
 		</div>

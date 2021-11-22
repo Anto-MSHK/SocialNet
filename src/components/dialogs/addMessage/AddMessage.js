@@ -1,22 +1,21 @@
 import React, { createRef } from 'react'
-import { changeAddMessageAC, addMessageAC } from './../../../redux/messagesReducer';
 
 const AddMessage = (props) => {
 
 	let newMessageElement = React.createRef();
 
 	let onAddMessage = () => {
-		props.dispatch(addMessageAC())
+		props.addMessage()
 	}
 
 	let onMessageChange = () => {
 		let change = newMessageElement.current.value
-		props.dispatch(changeAddMessageAC(change))
+		props.changeAddMessage(change)
 	}
 
 	return (
 		<form className="formAddMessage" >
-			<textarea ref={newMessageElement} onChange={onMessageChange} value={props.state.newMessageText} style={{ resize: "none" }} className="formAddMessage__input"
+			<textarea ref={newMessageElement} onChange={onMessageChange} value={props.newMessageText} style={{ resize: "none" }} className="formAddMessage__input"
 				placeholder="Text"
 			/>
 			<button type='button' onClick={onAddMessage} className="formAddMessage__BtnAdd">Send</button>
