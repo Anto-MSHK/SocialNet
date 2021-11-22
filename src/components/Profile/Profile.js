@@ -7,8 +7,8 @@ const Profile = (props) => {
 	return (
 		<div>
 			<ProfileInfo />
-			<AddPost DATAProfile={props.DATAProfile} dispatch={props.dispatch} />
-			<PostList DATAProfile={props.DATAProfile} dispatch={props.dispatch} />
+			<AddPost state={props.state} dispatch={props.dispatch} />
+			<PostList state={props.state} dispatch={props.dispatch} />
 		</div>
 	)
 }

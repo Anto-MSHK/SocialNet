@@ -19,7 +19,7 @@ let AddPost = (props) => {
 			<h2 class="formAddPost__title">Add post</h2>
 
 			<textarea ref={newPostElement} style={{ resize: "none" }} className="formAddPost__input"
-				placeholder="Text" value={props.DATAProfile.newPostText} onChange={onPostChange}
+				placeholder="Text" value={props.state.newPostText} onChange={onPostChange}
 			/>
 			<button type='button' onClick={onAddPost} className="formAddPost__BtnAdd">Create post</button>
 		</form >

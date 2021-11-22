@@ -4,7 +4,7 @@ import Post from './post/Post'
 
 const PostList = (props) => {
 
-	let posts_elements = props.DATAProfile.posts.map(post => (<Post text={post.text} likes={post.likes} />))
+	let posts_elements = props.state.posts.map(post => (<Post text={post.text} likes={post.likes} />))
 
 	return (
 		<div className="postList">

@@ -16,7 +16,7 @@ const AddMessage = (props) => {
 
 	return (
 		<form className="formAddMessage" >
-			<textarea ref={newMessageElement} onChange={onMessageChange} value={props.DATAMessages.newMessageText} style={{ resize: "none" }} className="formAddMessage__input"
+			<textarea ref={newMessageElement} onChange={onMessageChange} value={props.state.newMessageText} style={{ resize: "none" }} className="formAddMessage__input"
 				placeholder="Text"
 			/>
 			<button type='button' onClick={onAddMessage} className="formAddMessage__BtnAdd">Send</button>

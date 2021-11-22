@@ -107,7 +107,7 @@ h6 {
           align-items: center;
   width: 100%;
   height: 100%;
-  border-radius: 5px;
+  border-radius: 0px 0px 5px 5px;
   background-color: #18191b;
 }
 
@@ -314,6 +314,14 @@ h6 {
   width: 60%;
 }
 
+.dialogs__contact-list a {
+  padding: 10px;
+}
+
+.dialogs__sms-list div:first-child {
+  margin: 10px 0 0 0;
+}
+
 .sms-item {
   margin: 0 0 10px 0;
 }
@@ -329,7 +337,6 @@ h6 {
 }
 
 .formAddMessage__input {
-  margin: 10px 0 0 0;
   width: 100%;
   height: 150px;
   border-radius: 5px 5px 0 0;
