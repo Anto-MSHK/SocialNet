@@ -5,12 +5,12 @@ let AddPost = (props) => {
 	let newPostElement = React.createRef();
 
 	const onAddPost = () => {
-		props.AddPost()
+		props.addPost()
 	}
 
 	let onPostChange = () => {
 		let change = newPostElement.current.value
-		props.ChangeAddPost(change)
+		props.changeAddPost(change)
 	}
 
 	return (

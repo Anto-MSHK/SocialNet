@@ -310,7 +310,7 @@ h6 {
   color: white;
 }
 
-.dialogs__sms-list {
+.dialogs__message-window {
   width: 60%;
 }
 
@@ -318,7 +318,7 @@ h6 {
   padding: 10px;
 }
 
-.dialogs__sms-list div:first-child {
+.dialogs__message-list div:first-child {
   margin: 10px 0 0 0;
 }
 

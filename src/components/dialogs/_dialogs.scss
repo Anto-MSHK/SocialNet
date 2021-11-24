@@ -6,7 +6,7 @@
 		color: white;
 	}
 
-	&__sms-list {
+	&__message-window {
 		width: 60%;
 	}
 }
@@ -15,6 +15,6 @@
 	padding: 10px;
 }
 
-.dialogs__sms-list div:first-child {
+.dialogs__message-list div:first-child {
 	margin: 10px 0 0 0;
 }

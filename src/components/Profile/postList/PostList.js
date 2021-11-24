@@ -1,15 +1,13 @@
 import React from 'react'
-import AddPost from '../addPost/AddPost'
 import Post from './post/Post'
 
 const PostList = (props) => {
 
-	let posts_elements = props.state.posts.map(post => (<Post text={post.text} likes={post.likes} />))
+	let posts_elements = props.profileState.posts.map(post => (<Post text={post.text} likes={post.likes} />))
 
 	return (
 		<div className="postList">
 			<h1>Posts</h1>
-
 			{posts_elements}
 
 		</div>

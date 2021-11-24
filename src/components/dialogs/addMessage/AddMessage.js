@@ -2,7 +2,7 @@ import React, { createRef } from 'react'
 
 const AddMessage = (props) => {
 
-	let newMessageElement = React.createRef();
+	let newMessageElement = createRef();
 
 	let onAddMessage = () => {
 		props.addMessage()

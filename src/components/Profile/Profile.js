@@ -1,15 +1,15 @@
 import React from 'react'
 import AddPostContainer from './addPost/AddPostContainer';
 import ProfileInfo from './profileInfo/ProfileInfo'
-import PostList from './postList/PostList'
+import PostListContainer from './postList/PostListContainer';
 
 
 const Profile = (props) => {
 	return (
 		<div>
 			<ProfileInfo />
-			<AddPostContainer store={props.store} />
-			<PostList state={props.state.profilePage} />
+			<AddPostContainer />
+			<PostListContainer />
 		</div>
 	)
 }

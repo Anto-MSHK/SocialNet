@@ -66,20 +66,23 @@ That\'s the whole difference, you know, you do not know this eternal endless, yo
 let messagesReducer = (state = initialState, action) => {
 	switch (action.type) {
 
-		case ADD_MESSAGE:
+		case ADD_MESSAGE: {
 			let newMessage = {
 				id: 6,
 				name: 'Anton',
 				message: state.newMessageText,
 			}
-			state.newMessageText = ''
-			state.dialogs.push(newMessage)
-			return state
-
-		case CHANGE_ADD_MESSAGE:  // if (x === 'value2')
-			state.newMessageText = action.change
-			return state
-
+			let stateCopy = { ...state }
+			stateCopy.newMessageText = ''
+			stateCopy.dialogs = [...state.dialogs]
+			stateCopy.dialogs.push(newMessage)
+			return stateCopy
+		}
+		case CHANGE_ADD_MESSAGE: {
+			let stateCopy = { ...state }
+			stateCopy.newMessageText = action.change
+			return stateCopy
+		}
 		default:
 			return state
 	}
