@@ -1,0 +1,16 @@
+.users {
+	padding: 5px;
+	&__title {
+		margin: 0 0 15px 0;
+	}
+	&__list {
+	}
+
+	&__list .userItem {
+		margin: 0 0 10px 0;
+	}
+
+	&__list .userItem:last-child {
+		margin: 0;
+	}
+}

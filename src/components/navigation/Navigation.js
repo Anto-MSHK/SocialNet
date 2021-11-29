@@ -12,6 +12,11 @@ const Navigation = () => {
 						</NavLink>
 					</li>
 					<li>
+						<NavLink to="/users">
+							Users
+						</NavLink>
+					</li>
+					<li>
 						<NavLink to="/dialogs">
 							Messages
 						</NavLink>

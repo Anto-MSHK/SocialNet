@@ -1,5 +1,7 @@
 @import "./null_style";
 // ---------------------------------- //
+@import "./components/UI/buttons";
+// ---------------------------------- //
 @import "./components/header/head";
 // ---------------------------------- //
 @import "./components/navigation/navigation";
@@ -13,6 +15,9 @@
 @import "./components/Dialogs/contactItem/contactItem";
 @import "./components/Dialogs/dialogItem/dialogItem";
 @import "./components/Dialogs/addMessage/addMessage";
+// ---------------------------------- //
+@import "./components/Users/UserItem/userItem";
+@import "./components/Users/users";
 // ---------------------------------- //
 @import "./components/userInfo/userInfo";
 
@@ -71,4 +76,14 @@ h1 {
 h2 {
 	font-weight: bold;
 	font-size: 20px;
+}
+
+h3 {
+	font-weight: regular;
+	font-size: 16px;
+}
+
+h4 {
+	font-weight: regular;
+	font-size: 14px;
 }

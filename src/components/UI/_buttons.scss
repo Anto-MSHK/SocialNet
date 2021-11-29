@@ -1,0 +1,24 @@
+.btn-active {
+	padding: 5px 10px;
+
+	background-color: crimson;
+	color: #fff;
+
+	border-radius: 5px;
+}
+
+.btn-disactive {
+	padding: 5px 10px;
+
+	background-color: #757575;
+	color: #fff;
+
+	border-radius: 5px;
+}
+
+.btn-disactive span {
+	display: block;
+	transform: rotate(45deg);
+	color: #242527;
+	font-size: 20px;
+}

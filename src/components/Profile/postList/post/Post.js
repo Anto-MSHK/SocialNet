@@ -11,8 +11,8 @@ const Post = (props) => {
 				<div className="post__textContent">{props.text}</div>
 			</div>
 			<div className="post__actions">
-				<button className="post__btnDelete"><span>+</span></button>
-				<button className="post__btnLike"><b>{props.likes}</b> likes</button>
+				<button className="post__btnDelete btn-disactive"><span>+</span></button>
+				<button className="post__btnLike btn-active"><b>{props.likes}</b> likes</button>
 			</div>
 		</div>
 	)
