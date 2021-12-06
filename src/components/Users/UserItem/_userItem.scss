@@ -13,6 +13,9 @@
 		width: 120px;
 		height: 120px;
 		border-radius: 50%;
+
+		padding: 10px;
+		background-color: #18191b;
 	}
 
 	&__user-info {
@@ -20,11 +23,27 @@
 	}
 
 	&__user-info li:first-child {
-		margin: 0 0 8px 0;
+		margin: 0 0 4px 0;
 	}
 
 	&__user-info li {
 		margin: 0 0 5px 0;
+	}
+
+	&__avatar-id {
+		position: relative;
+	}
+
+	&__id {
+		background-color: #18191b;
+		padding: 4px;
+		border-radius: 5px;
+		margin: auto;
+		position: absolute;
+		right: 18%;
+		left: 18%;
+		text-align: center;
+		bottom: 1px;
 	}
 
 	&__btn {

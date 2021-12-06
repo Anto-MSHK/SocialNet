@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Users from './Users';
-import { toggleFollowerAC } from './../../redux/usersReducer';
+import { setUsersAC, toggleFollowerAC } from './../../redux/usersReducer';
 
 let mapStateToProps = (state) => {
 	return { usersPage: state.usersPage }
@@ -9,7 +9,8 @@ let mapStateToProps = (state) => {
 
 let mapDispatchToProps = (dispatch) => {
 	return {
-		followed: (userId) => dispatch(toggleFollowerAC(userId))
+		followed: (userId) => dispatch(toggleFollowerAC(userId)),
+		setUsers: (serverUsers) => dispatch(setUsersAC(serverUsers))
 	}
 }
 const UsersContainer = connect(mapStateToProps, mapDispatchToProps)(Users)

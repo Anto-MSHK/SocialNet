@@ -1,4 +1,5 @@
 import React from 'react'
+import iconUserStandart from '../../../assets/img/interface/userStandart.png'
 
 const UserItem = (props) => {
 
@@ -8,17 +9,20 @@ const UserItem = (props) => {
 
 	return (
 		<div className="userItem">
-			<img className="userItem__avatar" src="https://i1.sndcdn.com/avatars-000774825631-azr17a-t500x500.jpg" />
+			<div className="userItem__avatar-id">
+				<img className="userItem__avatar" src={props.state.photos.small != null ? props.state.photos.small : iconUserStandart} />
+				<span className="userItem__id" ><i>id: </i>{props.state.id}</span>
+			</div>
 			<ul className="userItem__user-info">
 				<li><h2>{props.state.name}</h2></li>
 				<li><h3>{props.state.status}</h3></li>
-				<li><i>City:</i> {props.state.city}</li>
-				<li><i>Country:</i> {props.state.country}</li>
+				{/* <li><i>City:</i> {props.state.city}</li>
+				<li><i>Country:</i> {props.state.country}</li> */}
 			</ul>
 			{
 				props.state.isFollow
-					? <button className="userItem__btn btn-active" onClick={follow}>Подписаться</button>
-					: <button className="userItem__btn btn-disactive" onClick={follow}>Отписаться</button>
+					? <button className="userItem__btn btn-disactive" onClick={follow}>Отписаться</button>
+					: <button className="userItem__btn btn-active" onClick={follow}>Подписаться</button>
 
 			}
 		</div>
