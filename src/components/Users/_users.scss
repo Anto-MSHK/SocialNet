@@ -13,4 +13,17 @@
 	&__list .userItem:last-child {
 		margin: 0;
 	}
+
+	&__page-list {
+		overflow-wrap: anywhere;
+		margin: 10px 0;
+	}
+
+	&__page-item {
+		display: inline;
+		padding: 5px 3px;
+	}
+	.active {
+		font-weight: bold;
+	}
 }
