@@ -1,7 +1,7 @@
 .users {
 	padding: 5px;
 	&__title {
-		margin: 0 0 15px 0;
+		margin: auto 0;
 	}
 	&__list {
 	}
@@ -25,5 +25,18 @@
 	}
 	.active {
 		font-weight: bold;
+	}
+	&__preloader {
+		position: absolute;
+		right: 0;
+		width: 30px;
+		height: 30px;
+	}
+
+	&__head {
+		display: flex;
+		position: relative;
+		align-items: center;
+		margin: 0 0 10px 0;
 	}
 }

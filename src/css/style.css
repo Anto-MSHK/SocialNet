@@ -199,11 +199,11 @@ h6 {
 }
 
 .profileInfo__data div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  text-align: center;
+}
+
+.profileInfo__name {
+  text-align: center;
 }
 
 .profileInfo__age {
@@ -215,6 +215,10 @@ h6 {
   height: 150px;
   border-radius: 50%;
   margin: 0 0 10px 0;
+}
+
+.profileInfo__job-look-status {
+  width: 15px;
 }
 
 .postList {
@@ -392,6 +396,7 @@ h6 {
 }
 
 .userItem__id {
+  color: white;
   background-color: #18191b;
   padding: 4px;
   border-radius: 5px;
@@ -414,7 +419,7 @@ h6 {
 }
 
 .users__title {
-  margin: 0 0 15px 0;
+  margin: auto 0;
 }
 
 .users__list .userItem {
@@ -437,6 +442,24 @@ h6 {
 
 .users .active {
   font-weight: bold;
+}
+
+.users__preloader {
+  position: absolute;
+  right: 0;
+  width: 30px;
+  height: 30px;
+}
+
+.users__head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 0 10px 0;
 }
 
 .userInfo {

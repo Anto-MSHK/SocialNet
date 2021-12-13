@@ -7,7 +7,9 @@ import PostListContainer from './postList/PostListContainer';
 const Profile = (props) => {
 	return (
 		<div>
-			<ProfileInfo />
+			{props.userInfo != null &&
+				<ProfileInfo userInfo={props.userInfo} />
+			}
 			<AddPostContainer />
 			<PostListContainer />
 		</div>

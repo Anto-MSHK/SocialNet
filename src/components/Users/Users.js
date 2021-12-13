@@ -1,8 +1,9 @@
 import React from 'react'
 import UserItem from './UserItem/UserItem'
+import preloader from '../../assets/img/interface/preloader.svg'
 
 const Users = (props) => {
-	let users_elemets = props.users.map(user => <UserItem state={user} key={user.id} />);
+	let users_elemets = props.users.map(user => <UserItem state={user} follow={props.follow} key={user.id} />);
 
 	let pagesCount = Math.ceil(props.totalCount / props.pageSize)
 	let pages = [];
@@ -13,13 +14,17 @@ const Users = (props) => {
 	}
 	return (
 		<div className="users">
-			<h1 className="users__title">Users</h1>
+			<div className="users__head">
+				<h1 className="users__title">Users</h1>
+				{props.isExpectation && <img className="users__preloader" src={preloader} />}
+			</div>
+
 			<div className="users__list">
 				{users_elemets}
 			</div>
 			<ul className="users__page-list">
 				{
-					pages.map(page => {	
+					pages.map(page => {
 						return <li className={`users__page-item ${props.actualPage === page && "active"}`} onClick={() => {
 							props.onCurrentPage(page)
 						}}> {page}</li>

@@ -84,7 +84,7 @@ let messagesReducer = (state = initialState, action) => {
 	}
 }
 
-export const addMessageAC = () => ({ type: ADD_MESSAGE })
-export const changeAddMessageAC = (change) => ({ type: CHANGE_ADD_MESSAGE, change: change })
+export const addMessage = () => ({ type: ADD_MESSAGE })
+export const changeAddMessage = (change) => ({ type: CHANGE_ADD_MESSAGE, change })
 
 export default messagesReducer

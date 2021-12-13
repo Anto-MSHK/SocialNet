@@ -2,9 +2,10 @@ import React from 'react'
 import Post from './post/Post'
 
 const PostList = (props) => {
-
-	let posts_elements = props.profileState.posts.map(post => (<Post text={post.text} likes={post.likes} />))
-
+	let posts_elements
+	if (props.profileState.posts.length != 0) {
+		posts_elements = props.profileState.posts.map(post => (<Post text={post.text} likes={post.likes} />))
+	}
 	return (
 		<div className="postList">
 			<h1>Posts</h1>
