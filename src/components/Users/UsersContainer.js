@@ -13,7 +13,9 @@ class UsersContainer extends React.Component {
 	componentDidMount() {
 		this.props.setExpectation(true)
 		// if (this.props.users.length === 0) {
-		axios.get(`https://social-network.samuraijs.com/api/1.0/users?count=${this.props.pageSize}&page=${this.props.actualPage}`)
+		axios.get(`https://social-network.samuraijs.com/api/1.0/users?count=${this.props.pageSize}&page=${this.props.actualPage}`, {
+			withCredentials: true
+		})
 			.then((response) => {
 				this.props.setExpectation(false)
 				return this.props.setUsers(response.data)
@@ -26,7 +28,9 @@ class UsersContainer extends React.Component {
 		// this.props.actualPageCount = page
 		this.props.setCurrentPage(page)
 		this.props.setExpectation(true)
-		axios.get(`https://social-network.samuraijs.com/api/1.0/users?count=${this.props.pageSize}&page=${page}`)
+		axios.get(`https://social-network.samuraijs.com/api/1.0/users?count=${this.props.pageSize}&page=${page}`, {
+			withCredentials: true
+		})
 			.then((response) => {
 				this.props.setExpectation(false)
 				return this.props.setUsers(response.data)
@@ -48,7 +52,7 @@ let mapStateToProps = (state) => {
 		pageSize: state.usersPage.pageSize,
 		actualPage: state.usersPage.actualPage,
 		totalCount: state.usersPage.totalCount,
-		isExpectation: state.usersPage.isExpectation
+		isExpectation: state.usersPage.isExpectation,
 	}
 }
 

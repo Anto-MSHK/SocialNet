@@ -121,9 +121,9 @@ h6 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -131,12 +131,30 @@ h6 {
   height: 100%;
   border-radius: 0px 0px 5px 5px;
   background-color: #18191b;
+  padding: 10px;
 }
 
 .header__logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__logo-img {
   width: 40px;
   height: 40px;
-  margin: 5px 10px;
+  margin: 0 10px 0 0;
+}
+
+.header__userInfo {
+  color: white;
+}
+
+.header__userInfo:hover {
+  color: #dadada;
 }
 
 .navigation {
