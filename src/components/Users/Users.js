@@ -3,7 +3,7 @@ import UserItem from './UserItem/UserItem'
 import preloader from '../../assets/img/interface/preloader.svg'
 
 const Users = (props) => {
-	let users_elemets = props.users.map(user => <UserItem state={user} follow={props.toggleFollower} key={user.id} />);
+	let users_elemets = props.users.map(user => <UserItem state={user} toggleFollower={props.toggleFollower} isExpectationFollowers={props.isExpectationFollowers} setExpectationFollowers={props.setExpectationFollowers} key={user.id} />);
 
 	let pagesCount = Math.ceil(props.totalCount / props.pageSize)
 	let pages = [];

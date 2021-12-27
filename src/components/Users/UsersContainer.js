@@ -1,9 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Users from './Users';
-import * as axios from 'axios'
-import { setUsers, toggleFollower, setCurrentPage, setExpectation } from './../../redux/usersReducer';
-
+import { setUsers, toggleFollower, setCurrentPage, setExpectation, setExpectationFollowers } from './../../redux/usersReducer';
 class UsersContainer extends React.Component {
 
 	constructor(props) {
@@ -11,30 +9,12 @@ class UsersContainer extends React.Component {
 	}
 
 	componentDidMount() {
-		this.props.setExpectation(true)
-		// if (this.props.users.length === 0) {
-		axios.get(`https://social-network.samuraijs.com/api/1.0/users?count=${this.props.pageSize}&page=${this.props.actualPage}`, {
-			withCredentials: true
-		})
-			.then((response) => {
-				this.props.setExpectation(false)
-				return this.props.setUsers(response.data)
-			})
-		// }
-
+		this.props.setUsers(this.props.pageSize, this.props.actualPage)
 	}
 
 	onCurrentPage = (page) => {
-		// this.props.actualPageCount = page
 		this.props.setCurrentPage(page)
-		this.props.setExpectation(true)
-		axios.get(`https://social-network.samuraijs.com/api/1.0/users?count=${this.props.pageSize}&page=${page}`, {
-			withCredentials: true
-		})
-			.then((response) => {
-				this.props.setExpectation(false)
-				return this.props.setUsers(response.data)
-			})
+		this.props.setUsers(this.props.pageSize, this.props.actualPage)
 	}
 
 	render() {
@@ -53,9 +33,10 @@ let mapStateToProps = (state) => {
 		actualPage: state.usersPage.actualPage,
 		totalCount: state.usersPage.totalCount,
 		isExpectation: state.usersPage.isExpectation,
+		isExpectationFollowers: state.usersPage.isExpectationFollowers
 	}
 }
 
 export default connect(mapStateToProps, {
-	toggleFollower, setUsers, setCurrentPage, setExpectation
+	toggleFollower, setUsers, setCurrentPage, setExpectation, setExpectationFollowers
 })(UsersContainer)

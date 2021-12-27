@@ -6,8 +6,8 @@ import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import UsersContainer from './components/Users/UsersContainer';
-import ProfileContainer from './components/Profile/ProfileContainer';
 import HeadContainer from './components/Header/HeadContainer';
+import ProfileURLMatch from './components/Profile/ProfileContainer';
 
 const App = (props) => {
 	return (
@@ -17,7 +17,7 @@ const App = (props) => {
 			<div className="app__content">
 				<div className="app__content-wrapper">
 					<Routes>
-						<Route path='/profile/*' element={<ProfileContainer />} />
+						<Route path='/profile/*' element={<ProfileURLMatch />} />
 						<Route path='/dialogs/*' element={<Dialogs />} />
 						<Route path='/news' element={<News />} />
 						<Route path='/music' element={<Music />} />
