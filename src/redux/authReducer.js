@@ -1,4 +1,5 @@
 import { profileAPI } from "../api/api"
+import { getStatus, setUserProfile } from "./profileReducer"
 
 const SET_AUTH_USER = 'SET-AUTH-USER'
 
@@ -29,6 +30,8 @@ export const setAuthUser = () => {
 		profileAPI.getMyProfile()
 			.then((data) => {
 				dispatch(setAuthUserSuccess(data.id, data.email, data.login))
+				dispatch(setUserProfile(data.id))
+				dispatch(getStatus(data.id))
 			})
 	}
 }

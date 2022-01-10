@@ -36,17 +36,28 @@ export const usersAPI = {
 
 export const profileAPI = {
 	getProfile: (userId) => {
-		return instance.get(`https://social-network.samuraijs.com/api/1.0/profile/${userId}`)
+		return instance.get(`profile/${userId}`)
 			.then((response) => {
 				// this.props.setExpectation(false)
 				return response.data
 			})
 	},
 	getMyProfile: () => {
-		return instance.get(`https://social-network.samuraijs.com/api/1.0/auth/me`)
+		return instance.get(`auth/me`)
 			.then((response) => {
 				let { id, email, login } = response.data.data
 				return { id, email, login }
 			})
+	},
+
+	getStatus: (userId) => {
+		return instance.get(`profile/status/${userId}`)
+			.then((data) => {
+				return data.data
+			})
+	},
+
+	updateStatus: (status) => {
+		return instance.put(`profile/status`, { status: status })
 	}
 }

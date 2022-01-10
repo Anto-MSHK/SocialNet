@@ -17,7 +17,6 @@ class HeadContainer extends React.Component {
 		return <Head {...this.props} />
 	}
 }
-debugger
 const mapStateToProps = (state) => {
 	return {
 		isAuth: state.auth.isAuth,

@@ -1,13 +1,14 @@
 import "./css/style.css";
 import Navigation from './components/Navigation/Navigation';
 import Dialogs from "./components/Dialogs/Dialogs";
-import { Route, Routes } from "react-router-dom";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import UsersContainer from './components/Users/UsersContainer';
 import HeadContainer from './components/Header/HeadContainer';
-import ProfileURLMatch from './components/Profile/ProfileContainer';
+import ProfileContainer from './components/Profile/ProfileContainer';
+import { Route, Routes } from "react-router-dom";
+import Login from './components/Login/Login';
 
 const App = (props) => {
 	return (
@@ -17,7 +18,9 @@ const App = (props) => {
 			<div className="app__content">
 				<div className="app__content-wrapper">
 					<Routes>
-						<Route path='/profile/*' element={<ProfileURLMatch />} />
+						<Route exact path='/' element={<ProfileContainer />} />
+						<Route exact path='/login' element={<Login />} />
+						<Route path='/profile/*' element={<ProfileContainer />} />
 						<Route path='/dialogs/*' element={<Dialogs />} />
 						<Route path='/news' element={<News />} />
 						<Route path='/music' element={<Music />} />
@@ -26,7 +29,7 @@ const App = (props) => {
 					</Routes>
 				</div>
 			</div>
-		</div>
+		</div >
 	);
 }
 

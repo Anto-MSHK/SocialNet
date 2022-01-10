@@ -8,11 +8,11 @@ let AddPost = (props) => {
 		props.addPost()
 	}
 
+
 	let onPostChange = () => {
 		let change = newPostElement.current.value
 		props.changeAddPost(change)
 	}
-
 	return (
 		<form className="formAddPost" >
 			<h2 class="formAddPost__title">Add post</h2>
