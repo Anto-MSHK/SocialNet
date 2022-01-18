@@ -2,9 +2,15 @@ import React from 'react'
 import check_img from '../../../assets/img/interface/check_square_icon.svg'
 import cross_img from '../../../assets/img/interface/cross_exit_remove_icon.svg'
 import user_default_avatar from '../../../assets/img/interface/userStandart.png'
-import ProfileStatus from '../../Status/ProfileStatus'
+import { ProfileStatus } from '../../Status/ProfileStatus'
+import { NavLink } from 'react-router-dom';
 
 const ProfileInfo = (props) => {
+
+	const sendMessageUser = () => {
+		props.setNewContact({ userName: props.userInfo.fullName, userId: props.userInfo.userId, userPhoto: props.userInfo.photos.small })
+	}
+
 	return (
 		<div className="profileInfo" >
 			<img src={props.userInfo.photos.small ? props.userInfo.photos.small : user_default_avatar} alt="" className="profileInfo__avatar" />
@@ -21,6 +27,10 @@ const ProfileInfo = (props) => {
 						&& <li className="profileInfo__age"><i>What work is looking for:</i> {props.userInfo.lookingForAJobDescription}</li>
 					}
 				</div>
+				{props.userInfo.userId !== props.myId &&
+					<NavLink to={"/dialogs/" + props.userInfo.userId + "/messages"} onClick={sendMessageUser} className="btn-send btn-active">
+						Send
+					</NavLink>}
 			</ul>
 		</div >
 	)

@@ -58,6 +58,21 @@ export const profileAPI = {
 	},
 
 	updateStatus: (status) => {
-		return instance.put(`profile/status`, { status: status })
+		return instance.put(`profile/status`, { status })
+	}
+}
+
+export const messagesAPI = {
+
+	getMyContacts: () => {
+		return instance.get(`dialogs`)
+	},
+
+	getMessagesById: (userId) => {
+		return instance.get(`dialogs/${userId}/messages`)
+	},
+
+	addMessageToUser: (userId, body) => {
+		return instance.post(`dialogs/${userId}/messages`, { body })
 	}
 }

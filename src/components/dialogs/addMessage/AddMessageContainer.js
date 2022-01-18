@@ -1,15 +1,18 @@
 import React, { createRef } from 'react'
 import { connect } from 'react-redux'
-import { changeAddMessage, addMessage } from '../../../redux/messagesReducer';
+import { compose } from 'redux';
+import { withURLmatch } from '../../../hooks/witchURLmatch';
+import { addMessage } from '../../../redux/messagesReducer';
 import AddMessage from './AddMessage';
+import { setNewContact } from './../../../redux/messagesReducer';
 
 let mapStateToProps = (state) => {
-	return { newMessageText: state.messagesPage.newMessageText }
+	return {}
 }
 
-const AddMessageContainer = connect(mapStateToProps, {
-	addMessage,
-	changeAddMessage
-})(AddMessage)
+const AddMessageContainer = compose(
+	withURLmatch('/dialogs/:userId/messages'),
+	connect(mapStateToProps, { addMessage, setNewContact }))(AddMessage)
+
 
 export default AddMessageContainer

@@ -1,49 +1,54 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react'
 
-export default class ProfileStatus extends Component {
-	componentDidUpdate(prevProps, prevState) {
-		if (prevProps.status !== this.props.status) {
-			this.setState({ state: this.props.status })
-		}
+export const ProfileStatus = (props) => {
 
-		// if (prevProps.blocked && !this.props.blocked) {
-		// 	debugger
-		// 	this.setState({ status: prevState.state })
-		// }
-		// if (this.props.blocked) {
-		// }
+	const [isOpenInput, setIsOpenInput] = useState(false)
+	const [status, setStatus] = useState(props.status)
+
+	useEffect(() => {
+		debugger
+		setStatus(props.status)
+	}, [props.status])
+
+	const openInput = () => {
+		setIsOpenInput(true)
 	}
 
-	state = {
-		isOpenInput: false,
-		status: this.props.status
+	const closeInput = () => {
+		setIsOpenInput(false)
+		props.updateStatus(status)
 	}
 
-	openInput = () => {
-		this.setState({ isOpenInput: true, status: this.props.status })
+	const changeAddStatus = (e) => {
+		setStatus(e.target.value)
 	}
+	// componentDidUpdate(prevProps, prevState) {
+	// 	if (prevProps.status !== this.props.status) {
+	// 		this.setState({ state: this.props.status })
+	// 	}
 
-	closeInput = () => {
+	// 	// if (prevProps.blocked && !this.props.blocked) {
+	// 	// 	debugger
+	// 	// 	this.setState({ status: prevState.state })
+	// 	// }
+	// 	// if (this.props.blocked) {
+	// 	// }
+	// }
 
-		this.setState({ isOpenInput: false })
-		this.props.updateStatus(this.state.status)
-	}
+	// state = {
+	// 	isOpenInput: false,
+	// 	status: this.props.status
+	// }
 
-	changeAddStatus = (e) => {
-		this.setState({ status: e.target.value })
-	}
-
-	render() {
-		return (
-			<>
-				{!this.props.blocked
-					? (!this.state.isOpenInput
-						? <span onDoubleClick={this.openInput}><i>Status: </i>{this.props.status}</span>
-						: <input value={this.state.status} autoFocus select onBlur={this.closeInput} onChange={this.changeAddStatus} type="text" />)
-					: (<span><i>Status: </i>{this.props.status}</span>)
-				}
-			</>
-		)
-	}
+	return (
+		<>
+			{!props.blocked
+				? (!isOpenInput
+					? <span onDoubleClick={openInput}><i>Status: </i>{props.status}</span>
+					: <input value={status} autoFocus select onBlur={closeInput} onChange={changeAddStatus} type="text" />)
+				: (<span><i>Status: </i>{props.status}</span>)
+			}
+		</>
+	)
 }
 

@@ -4,7 +4,7 @@ import UserInfo from './../../userInfo/UserInfo';
 const MessageItem = (props) => {
 	return (
 		<div className="sms-item">
-			<UserInfo userName={props.userName} />
+			<UserInfo userName={props.userName} type="message" lastActivityTime={props.addedTime} />
 			<p>
 				{props.message}
 			</p>

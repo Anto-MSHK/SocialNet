@@ -1,11 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { compose } from 'redux'
 import ContactList from './ContactList';
+import { getMyContacts, getMessagesById } from './../../../redux/messagesReducer';
+import { withURLmatch } from '../../../hooks/witchURLmatch';
 
 let mapStateToProps = (state) => {
-	return { contactsState: state.messagesPage }
+	return { contacts: state.messagesPage.contacts, newContact: state.messagesPage.newContact }
 }
-
-const ContactListContainer = connect(mapStateToProps)(ContactList)
-
-export default ContactListContainer
+export default compose(withURLmatch('/dialogs/:userId/messages'), connect(mapStateToProps, { getMyContacts, getMessagesById }))(ContactList)

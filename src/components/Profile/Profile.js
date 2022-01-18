@@ -7,7 +7,7 @@ const Profile = (props) => {
 	return (
 		<div>
 			{props.userInfo != null && props.myId != null &&
-				<ProfileInfo userInfo={props.userInfo} status={props.status} getStatus={props.getStatus} updateStatus={props.updateStatus} myId={props.myId} />
+				<ProfileInfo userInfo={props.userInfo} status={props.status} getStatus={props.getStatus} updateStatus={props.updateStatus} myId={props.myId} setNewContact={props.setNewContact} />
 			}
 			<AddPostContainer />
 			<PostListContainer />

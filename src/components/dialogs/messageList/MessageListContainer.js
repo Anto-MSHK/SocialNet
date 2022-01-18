@@ -1,10 +1,11 @@
 import React from 'react'
 import MessageList from './MessageList';
 import { connect } from 'react-redux'
+import { getMessagesById } from './../../../redux/messagesReducer';
 
 
 let mapStateToProps = (state) => {
-	return { messagesState: state.messagesPage }
+	return { messages: state.messagesPage }
 }
 
 const MessageListContainer = connect(mapStateToProps)(MessageList)

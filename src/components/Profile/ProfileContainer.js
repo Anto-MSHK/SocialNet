@@ -7,6 +7,7 @@ import { getStatus, updateStatus } from './../../redux/profileReducer';
 import { setAuthUser } from "./../../redux/authReducer";
 import withAuthRedirect from './../../hooks/withRedirect';
 import { withURLmatch } from '../../hooks/witchURLmatch';
+import { setNewContact } from './../../redux/messagesReducer';
 class ProfileContainer extends React.Component {
 
 	constructor(props) {
@@ -39,5 +40,5 @@ export default
 	compose(
 		withAuthRedirect,
 		withURLmatch('/profile/:userId/'),
-		connect(mapStateToProps, { setUserProfile, setExpectation, getStatus, updateStatus, setAuthUser }))
+		connect(mapStateToProps, { setUserProfile, setExpectation, getStatus, updateStatus, setAuthUser, setNewContact }))
 		(ProfileContainer)

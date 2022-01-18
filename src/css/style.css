@@ -261,6 +261,12 @@ h6 {
   text-align: center;
 }
 
+.profileInfo .btn-send {
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+
 .postList {
   margin: 20px 0 0 0;
 }
@@ -338,28 +344,37 @@ h6 {
 }
 
 .dialogs {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr;
+  -ms-grid-columns: 1fr 2.2fr;
+      grid-template: 1fr / 1fr 2.2fr;
 }
 
 .dialogs__contact-list a {
   color: white;
 }
 
+.dialogs__contact-list {
+  padding: 0 0 0 5px;
+}
+
 .dialogs__message-window {
-  width: 60%;
+  background-color: #242527;
+  padding: 20px;
+  border-radius: 5px;
+  height: 100%;
 }
 
 .dialogs__contact-list a {
-  padding: 10px;
+  padding: 10px 30px 10px 10px;
+  border-radius: 5px 0 0 5px;
 }
 
-.dialogs__message-list div:first-child {
-  margin: 10px 0 0 0;
+.dialogs__contact-list a.active {
+  background-color: #242527;
+  display: block;
+  width: 100%;
 }
 
 .sms-item {
@@ -576,6 +591,7 @@ code {
 h1 {
   font-weight: bold;
   font-size: 25px;
+  margin: 0 10px 10px 10px;
 }
 
 h2 {

@@ -1,21 +1,23 @@
-import React, { createRef } from 'react'
+import React, { createRef, useState } from 'react'
 
 const AddMessage = (props) => {
 
-	let newMessageElement = createRef();
+	const [messageText, setMessageText] = useState("")
 
 	let onAddMessage = () => {
-		props.addMessage()
+		debugger
+		props.addMessage(props.match.params.userId, messageText)
+		setMessageText("")
+		props.setNewContact(null)
 	}
 
-	let onMessageChange = () => {
-		let change = newMessageElement.current.value
-		props.changeAddMessage(change)
+	let onMessageChange = (e) => {
+		setMessageText(e.target.value)
 	}
 
 	return (
 		<form className="formAddMessage" >
-			<textarea ref={newMessageElement} onChange={onMessageChange} value={props.newMessageText} style={{ resize: "none" }} className="formAddMessage__input"
+			<textarea onChange={onMessageChange} value={messageText} style={{ resize: "none" }} className="formAddMessage__input"
 				placeholder="Text"
 			/>
 			<button type='button' onClick={onAddMessage} className="formAddMessage__BtnAdd">Send</button>
