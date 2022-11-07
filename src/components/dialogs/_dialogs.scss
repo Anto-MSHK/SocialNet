@@ -1,20 +1,26 @@
 .dialogs {
 	display: grid;
 	grid-template: 1fr / 1fr 2.2fr;
+	height: 100%;
+
+	&__contacts {
+		overflow: auto;
+	}
 
 	&__contact-list a {
 		color: white;
+		display: block;
 	}
 
 	&__contact-list {
 		padding: 0 0 0 5px;
+		overflow: auto;
 	}
 
 	&__message-window {
 		background-color: #242527;
 		padding: 20px;
 		border-radius: 5px;
-		height: 100%;
 	}
 }
 

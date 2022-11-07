@@ -349,21 +349,27 @@ h6 {
   -ms-grid-rows: 1fr;
   -ms-grid-columns: 1fr 2.2fr;
       grid-template: 1fr / 1fr 2.2fr;
+  height: 100%;
+}
+
+.dialogs__contacts {
+  overflow: auto;
 }
 
 .dialogs__contact-list a {
   color: white;
+  display: block;
 }
 
 .dialogs__contact-list {
   padding: 0 0 0 5px;
+  overflow: auto;
 }
 
 .dialogs__message-window {
   background-color: #242527;
   padding: 20px;
   border-radius: 5px;
-  height: 100%;
 }
 
 .dialogs__contact-list a {
@@ -588,6 +594,10 @@ code {
 }
 
 /*///////////////////////////////////////////////////// */
+#root {
+  height: 90%;
+}
+
 h1 {
   font-weight: bold;
   font-size: 25px;

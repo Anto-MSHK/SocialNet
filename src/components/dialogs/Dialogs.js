@@ -9,11 +9,11 @@ const Dialogs = (props) => {
 
 	return (
 		<div className="dialogs">
-			<div>
+			<div className="dialogs__contacts">
 				<h1>Contacts</h1>
 				<ContactListContainer />
 			</div>
-			<div>
+			<div className="dialogs__messages">
 				<div className="dialogs__message-window">
 					<MessageListContainer />
 					<AddMessageContainer />

@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-
+// const  setActive = ({isActive})=> isActive ? "active-link" : "";
 const Navigation = () => {
 	return (
 		<nav className="navigation">

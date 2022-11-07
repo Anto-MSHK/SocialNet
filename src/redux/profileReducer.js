@@ -2,6 +2,7 @@ import { profileAPI } from "../api/api"
 
 // const SET_MY_ID = 'SET-MY-ID'
 const ADD_POST = 'ADD-POST'
+
 const CHANGE_ADD_POST = 'CHANGE-ADD-POST'
 const SET_USER_PROFILE = 'SET-USER-PROFILE'
 const IS_EXPECTATION = 'IS-EXPECTATION'
